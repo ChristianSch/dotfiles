@@ -38,10 +38,6 @@ set guifont=Fira\ Code:h12
 " Make Vim more useful
 set nocompatible
 
-" for patched code ligature fonts
-set macligatures
-
-
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 " ?
 
@@ -84,6 +80,7 @@ autocmd VimEnter *
     \   if !argc()
     \ |   Startify
     \ |   NERDTree
+    \ |   Limelight 0.3
     \ |   wincmd w
     \ | endif
 
@@ -169,6 +166,8 @@ if has("gui_macvim")
     set guioptions-=L   " MacVim: hide left scrollbar.
     set vb              " MacVim: disable audible bell
     set showtabline=2
+    " for patched code ligature fonts
+    set macligatures
 endif
 
 set viminfo+=! " make sure vim history works
