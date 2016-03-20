@@ -18,6 +18,7 @@ tpope/vim-repeat        # allows repeat (.) also for non-native things like plug
 mhinz/vim-startify      # fancy starting screen
 tpope/vim-surround      # introduces control flows to edit surroundings (brackets, "", '',
                         # and such)
+conqueGDB               # (only mirrored on gh) gdb interface w/ line highlightning
 
 # not used anymore: mahutsushi/tagbar       # shows list of tags by scope
 # not used anymore: ?/taglist
