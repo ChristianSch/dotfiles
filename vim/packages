@@ -1,0 +1,30 @@
+# general
+scrooloose/nerdtree     # nerd tree (file browser)
+tmhedberg/SimplylFold   # no bs cold folding
+kien/ctrlp.vim          # ctrl + p fuzzy file search
+ervandew/supertab       # tab completion
+scrooloose/syntastic    # syntax checking
+shougo/unite            # UI helper stuff, needed for ag, can replace ctrl + p
+vim-airline/vim-airline # status bar \o/
+ntpeters/vim-better-whitespace # whitespace highlightning
+bling/vim-bufferline    # list of open files (read: tabs)
+gorodinskiy/vim-coloresque # color preview for style/html markup
+airblade/vim-gitgutter  # indicates git status per line
+nathanaelkane/vim-indent-guides # displays indent levels
+terryma/vim-multiple-cursors # multi cursor editing, sublime text style
+jistr/vim-nerdtree-tabs # prevents multiple nerdtrees if used with tabs (bufferline)
+luochen1990/rainbow     # multi color brackets
+tpope/vim-repeat        # allows repeat (.) also for non-native things like plugins
+mhinz/vim-startify      # fancy starting screen
+tpope/vim-surround      # introduces control flows to edit surroundings (brackets, "", '',
+                        # and such)
+conqueGDB               # (only mirrored on gh) gdb interface w/ line highlightning
+
+# not used anymore: mahutsushi/tagbar       # shows list of tags by scope
+# not used anymore: ?/taglist
+# vim-slime: repl in vim
+
+# languages
+neovimhaskell/haskell-vim
+julialang/julia-vim
+mustache/vim-mustache-handlebars
