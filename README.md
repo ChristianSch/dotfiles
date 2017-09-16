@@ -6,6 +6,7 @@ Tiling via ~~kwm~~ [chunkwm](https://github.com/koekeishiya/chunkwm) and
 [khd](https://github.com/koekeishiya/khd).
 
 ## Arch Linux
+(TODO)
 i3wm, polybar, rofi, termite
 
 ## NeoVim
