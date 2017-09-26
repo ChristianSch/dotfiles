@@ -1,27 +1,28 @@
 # Increase volume 5% with Apple volume up
-"amixer set Master playback 5%+"
+"/home/heimdall/.config/scripts/volcontrol.sh up"
     m:0x0 + c:123
     XF86AudioRaiseVolume
+
 # Increase volume 5% with F12
-"amixer set Master playback 5%+"
+"/home/heimdall/.config/scripts/volcontrol.sh up"
     m:0x0 + c:96
 
-
 # Decrease volume 5% with Apple volume down
-"amixer set Master playback 5%-"
+"/home/heimdall/.config/scripts/volcontrol.sh down"
     m:0x0 + c:122
     XF86AudioLowerVolume
+
 # Decrease volume 5% with F11
-"amixer set Master playback 5%-"
+"/home/heimdall/.config/scripts/volcontrol.sh down"
     m:0x0 + c:95
 
-
 # Mute with Apple mute
-"amixer set Master toggle"
+"/home/heimdall/.config/scripts/volcontrol.sh mute"
     m:0x0 + c:121
     XF86AudioMute
+
 # Mute with F10
-"amixer set Master toggle"
+"/home/heimdall/.config/scripts/volcontrol.sh mute"
     m:0x0 + c:76
 
 
@@ -42,3 +43,10 @@
     m:0x0 + c:238
     XF86KbdBrightnessDown
 
+"/home/heimdall/.config/scripts/screencontrol.sh up"
+    m:0x0 + c:233
+    XF86MonBrightnessUp
+
+"/home/heimdall/.config/scripts/screencontrol.sh down"
+    m:0x0 + c:232
+    XF86MonBrightnessDown
