@@ -26,3 +26,6 @@ running `mpd add $ALBUM/$SONG` where `$ALBUM` is a children folder
 of `$HOME/Music/beets/music` and `$SONG` therefore is a file in that very folder.
 You can also use `npmc` or `npmcpp`.
 
+## Fonts
+I use patched fonts for tmux and powerline stuff, see
+[here](https://github.com/powerline/fonts).
