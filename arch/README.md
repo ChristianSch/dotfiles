@@ -28,4 +28,8 @@ You can also use `npmc` or `npmcpp`.
 
 ## Fonts
 I use patched fonts for tmux and powerline stuff, see
-[here](https://github.com/powerline/fonts).
+[https://visual-assault.org/2016/03/05/install-encrypted-arch-linux-on-apple-macbook-pro/here](https://github.com/powerline/fonts).
+
+## MacBook
+See the macbook folder, as well as:
+* https://visual-assault.org/2016/03/05/install-encrypted-arch-linux-on-apple-macbook-pro/
