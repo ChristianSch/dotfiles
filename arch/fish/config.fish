@@ -85,3 +85,6 @@ setenv EDITOR nvim
 setenv BROWSER firefox
 
 set fish_greeting
+
+# set -U fish_user_paths /home/heimdall/.rvm/bin /usr/share/exploit-db
+rvm default
