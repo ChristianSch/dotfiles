@@ -5,10 +5,6 @@ You know the drill.
 Tiling via ~~kwm~~ [chunkwm](https://github.com/koekeishiya/chunkwm) and
 [khd](https://github.com/koekeishiya/khd).
 
-## Arch Linux
-(TODO)
-i3wm, polybar, rofi, termite
-
-## NeoVim
-![neovim](https://user-images.githubusercontent.com/6138133/28914086-b1841492-783a-11e7-845f-b27d7a55e6d6.png)
-
+## Arch Linux on a MacBook Pro 2011
+i3wm, polybar, rofi, termite, neovim, ncmcpp + mpd
+![head_0](https://user-images.githubusercontent.com/6138133/31071400-3601e3ea-a764-11e7-96e9-87b5e51829b9.png)
