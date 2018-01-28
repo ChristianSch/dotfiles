@@ -17,7 +17,8 @@ displays=($(xrandr | grep " connected" | awk -F'[ +]' '{print $1}'))
 for display in "${displays[@]}"
 do
     echo "starting polybar 'main_bar' on env MONITOR="$display
-    env MONITOR=$display polybar main_bar &
+    env MONITOR=$display polybar top &
+    env MONITOR=$display polybar bottom &
 done
 
 # Launch bar1 and bar2
