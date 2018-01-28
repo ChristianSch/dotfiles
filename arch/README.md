@@ -8,6 +8,24 @@
 * i3-gaps (aur)
 * `volnoti` (`volnoti-brightness-git` from `aur`)
 
+## packages
+* `i3-gaps`
+* `ttf-droid`
+* `i3-gaps` (aur)
+* `termite`
+* `redshift`
+* `termite`
+* `rofi` (aur)
+* `polybar` (aur)
+* `caffeine-ng` (aur)
+* `xorg-xrandr`
+* `compton`
+* `feh`
+* `dunst`
+* `osx-arc-darker`
+
+(TBD)
+
 
 ## Music
 I run `beets`+`mpd` with `alsa` and `pulseaudio`. You have to

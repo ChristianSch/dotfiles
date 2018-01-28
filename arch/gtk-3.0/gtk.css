@@ -1,0 +1,11 @@
+VteTerminal {
+    -VteTerminal-inner-border: 10px;
+}
+
+VteTerminal, vte-terminal {
+    padding: 10px;
+}
+
+.termite {
+    padding: 10px;
+}

@@ -40,6 +40,8 @@ if dein#load_state('~/.dein')
   call dein#add('mileszs/ack.vim')
   " tmux
   call dein#add('benmills/vimux')
+  " tag bar
+  call dein#add('majutsushi/tagbar')
 
   " indentation, parentheses and stuff
   call dein#add('nathanaelkane/vim-indent-guides')
@@ -100,7 +102,7 @@ set fo-=t
 
 set textwidth=90
 
-" always show tabline
+" always show tabline (lightline-buffer)
 set showtabline=2
 
 " Always show line numbers, but only in current window.
@@ -153,27 +155,29 @@ let g:ctrlp_working_path_mode = ""
 
 " minimal lightline setup
 let g:lightline = {
-    \ 'colorscheme': 'nord',
-     \ 'active': {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
         \   'left': [ [ 'mode' ] ],
         \   'right': [ ]
-        \ },
-	\ 'tabline': {
-		\ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-		\ 'right': [ ],
-		\ },
-	\ 'component_expand': {
-		\ 'buffercurrent': 'lightline#buffer#buffercurrent2',
-		\ },
-	\ 'component_type': {
-		\ 'buffercurrent': 'tabsel',
-		\ },
-	\ 'component_function': {
-		\ 'bufferbefore': 'lightline#buffer#bufferbefore',
-		\ 'bufferafter': 'lightline#buffer#bufferafter',
-		\ 'bufferinfo': 'lightline#buffer#bufferinfo',
-		\ },
-	\ }
+    \ },
+    \ 'tabline': {
+        \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+        \ 'right': [ ],
+    \ },
+    \ 'component_expand': {
+        \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
+    \ },
+    \ 'component_type': {
+        \ 'buffercurrent': 'tabsel',
+    \ },
+    \ 'component_function': {
+        \ 'bufferbefore': 'lightline#buffer#bufferbefore',
+        \ 'bufferafter': 'lightline#buffer#bufferafter',
+        \ 'bufferinfo': 'lightline#buffer#bufferinfo',
+    \ },
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+\ }
 
 " simple mode indicator
 " see: https://github.com/itchyny/lightline.vim/issues/113
@@ -195,7 +199,7 @@ let g:lightline.mode_map = {
 " let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
 " let s:palette.inactive.middle = s:palette.normal.middle
 " let s:palette.tabline.middle = s:palette.normal.middle
-
+"
 let g:lightline_buffer_excludes = ['vimfiler']
 let g:lightline_buffer_show_bufnr = 1
 let g:lightline_buffer_rotate = 0
@@ -204,6 +208,7 @@ let g:lightline_buffer_fname_mod = ':t'
 " the silver searcher
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep --smart-case'
+
 " replace ag with Ack, no need to type Ack any more
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -230,3 +235,5 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 colorscheme nord
 set background=dark
+
+let g:nord_comment_brightness = 20
