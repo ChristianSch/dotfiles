@@ -33,6 +33,8 @@
 * `pcmanfm`
 * `xsel`
 * `tmux`
+* `lxappearance`
+* `deepin-icon-theme`
 
 (TBD)
 
