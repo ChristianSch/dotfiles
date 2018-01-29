@@ -25,6 +25,14 @@
 * `osx-arc-darker` (aur)
 * `xorg-xrdb`
 * `cower`
+* `pavucontrol`
+* `pasystray` (aur)
+* `llpp` (aur) doc viewer
+* `gummi` latex editor
+* `gitg` git gui
+* `pcmanfm`
+* `xsel`
+* `tmux`
 
 (TBD)
 
