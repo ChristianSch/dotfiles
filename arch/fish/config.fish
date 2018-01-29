@@ -88,3 +88,12 @@ set fish_greeting
 
 # set -U fish_user_paths /home/heimdall/.rvm/bin /usr/share/exploit-db
 rvm default
+
+setenv QT_QPA_PLATFORMTHEME "qt5ct"
+
+begin
+    set --local AUTOJUMP_PATH /usr/share/autojump/autojump.fish
+    if test -e $AUTOJUMP_PATH
+        source $AUTOJUMP_PATH
+    end
+end

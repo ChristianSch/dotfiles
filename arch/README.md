@@ -22,7 +22,9 @@
 * `compton`
 * `feh`
 * `dunst`
-* `osx-arc-darker`
+* `osx-arc-darker` (aur)
+* `xorg-xrdb`
+* `cower`
 
 (TBD)
 
