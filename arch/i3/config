@@ -184,10 +184,12 @@ bindsym $mod+r mode "resize"
 # replaced by polybar
 
 # AUTOSTART
+exec light-locker &
 exec compton --config $HOME/.config/compton/config -b &
 exec --no-startup-id nm-applet &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id caffeine &
+exec pasystray &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 exec_always autorandr &
 exec_always nitrogen --restore &
