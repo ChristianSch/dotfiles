@@ -35,6 +35,16 @@
 * `tmux`
 * `lxappearance`
 * `deepin-icon-theme`
+* `the_silver_searcher`
+* `pulseaudio`
+* `siji` (aur)
+* `ttf-font-awesome-4` (aur)
+* `ttf-material-icons`
+* `nextcloud-client` (aur)
+* `wireless_tools` (for polybar network support)
+* `light-locker`
+* `volnoti` (aur)
+* `gtk-engine-murrine`
 
 (TBD)
 
