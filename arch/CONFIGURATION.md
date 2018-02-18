@@ -35,3 +35,19 @@ local time:
 ```
 sudo timedatectl set-ntp true
 ```
+
+nvim:
+install `vim-dein-git` and copy the .config/nvim folder to $HOME
+install `python-neovim python-sexpdata python-websocket-client`
+install `fzf`
+
+## DNS
+Prevent `dhcpcd` and `NetworkManager` from overwriting the conf.
+Append the following to `/etc/NetworkManager/NetworkManager.conf`:
+
+```
+[main]
+dns=none
+```
+
+and `nohook resolv.conf` to `/etc/dhcpcd.conf`.
