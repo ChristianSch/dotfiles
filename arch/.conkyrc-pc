@@ -82,7 +82,7 @@ $sysname $kernel
 ${color1}Uptime: $color2$uptime$color1
 
 CPU ${hr 2}
-${execi 1000 cat /proc/cpuinfo | grep 'model name' | uniq | cut -c 14-30}${alignr}${execi 30 sensors | grep 'temp1' | cut -c16-19} C°
+${execi 1000 cat /proc/cpuinfo | grep 'model name' | uniq | cut -c 14-30}${goto 110}CPU: ${cpu cpu0}%${alignr}${execi 30 sensors | grep 'temp1' | cut -c16-19} C°
 ${offset 10}${cpugraph cpu0 20,190 $color3 -0.3}
 ${offset 15}${cpubar cpu1 8,25}  ${cpubar cpu2 8,25}  ${cpubar cpu3 8,25}  ${cpubar cpu4 8,25}  ${cpubar cpu5 8,25}  ${cpubar cpu6 8,25}
 ${offset 15}${cpubar cpu7 8,25}  ${cpubar cpu8 8,25}  ${cpubar cpu9 8,25}  ${cpubar cpu10 8,25}  ${cpubar cpu11 8,25}  ${cpubar cpu12 8,25}
