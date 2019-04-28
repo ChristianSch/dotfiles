@@ -28,7 +28,7 @@ if dein#load_state('~/.dein')
   call dein#add('sbdchd/neoformat')
   " UI
   call dein#add('itchyny/lightline.vim')
-  call dein#add('taohex/lightline-buffer')
+  call dein#add('taohexxx/lightline-buffer')
   call dein#add('airblade/vim-gitgutter')
   " intelligent buffer closing
   call dein#add('qpkorr/vim-bufkill')
