@@ -1,0 +1,113 @@
+conky.config = {
+
+    -- process settinsg
+    background = true,
+
+    -- text settings
+    use_xft=true,
+    xftalpha=1,
+    font="Droid Sans:size=9",
+
+    cpu_avg_samples = 2,
+	net_avg_samples = 2,
+    update_interval = 2,
+    temperature_unit = 'celsius',
+
+    double_buffer = true,
+    no_buffers=true,
+	text_buffer_size = 2048,
+
+    alignment = 'top_right',
+    gap_x = 20,
+	gap_y = 40,
+	minimum_width = 200, minimum_height = 00,
+    maximum_width = 200,
+
+    override_utf8_locale = true,
+
+    own_window = true,
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_type='desktop',
+    own_window_title='Conky',
+	own_window_class = 'conky',
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+
+    draw_graph_borders=false,
+    draw_borders=false,
+
+    -- fonts
+    draw_shades=false,
+
+    out_to_console=false,
+    out_to_stderr=false,
+
+    -- polar night
+    -- nord0="#2e3440",
+    -- nord1="#3b4252",
+    -- nord2="#434c5e",
+    -- nord3="#4c566a",
+    -- snowstorm
+    -- nord4="#d8dee9",
+    -- nord5="#e5e9f0",
+    -- nord6="#eceff4",
+
+    -- frost
+    -- nord7="#8fbcbb",
+    -- nord8="#88c0d0",
+    -- nord9="#81a1c1",
+    -- nord10="#5e81ac",
+
+    -- aurora
+    -- nord11="#bf616a",
+    -- nord12="#d08770",
+    -- nord13="#ebcb8b",
+    -- nord14="#a3be8c",
+    -- nord15="#b48ead",
+
+    -- nord0
+    default_color="#2e3440",
+    color1="#2e3440",
+    -- nord3
+    color2="#4c566a",
+    color3="#d8dee9",
+    color4="#5e81ac"
+
+};
+
+conky.text = [[
+SYSTEM ${hr 2}
+$sysname $kernel
+${color1}Uptime: $color2$uptime$color1
+
+CPU ${hr 2}
+${execi 1000 cat /proc/cpuinfo | grep 'model name' | uniq | cut -c 14-40}${alignr}${execi 30 sensors | grep 'Package id 0' | cut -c16-20} C°
+${offset 10}${cpugraph cpu0 20,190 $color3 -0.3}
+
+RAM ${hr 2}
+MEM:${alignr}${mem} / ${memmax} (${memperc}%)
+${offset 10}${memgraph 20,190 $color3 -0.3}
+
+LOAD ${hr 2}
+NAME${goto 124}CPU${alignr}MEM
+${hr 1}$color2
+${offset 5}${top name 1} ${goto 124}${top cpu 1}${alignr}${top mem 1}
+${offset 5}${top name 2} ${goto 124}${top cpu 2}${alignr}${top mem 2}
+${offset 5}${top name 3} ${goto 124}${top cpu 3}${alignr}${top mem 3}
+${offset 5}${top name 4} ${goto 124}${top cpu 4}${alignr}${top mem 4}
+${offset 5}${top name 5} ${goto 124}${top cpu 5}${alignr}${top mem 5}
+$color1
+
+NETWORK ${hr 2}
+DOWN: ${downspeed wlp2s0}${goto 105}UP: ${upspeed wlp2s0}
+${downspeedgraph wlp2s0 20,95 $color3}${offset 10}${upspeedgraph wlp3s0 20,95 $color3}
+Lan IP: ${alignr}${addr wlp2s0}
+Ext IP: ${alignr}${execi 600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+${alignr}${execi 600 wget -q -O /dev/stdout https://www.dnsleaktest.com/ | grep from | grep -o '<p>.*<img' | grep -o '>.*<' | grep -oEi '[a-zA-Z0-9 ,]+'}
+
+DISK sda ${hr 2}
+read: ${diskio_read nvme0n1p4}${alignr}write: ${diskio_write nvme0n1p4}
+${diskiograph_read nvme0n1p4 20,95 $color3} ${diskiograph_write nvme0n1p4 20,95 $color3}
+${hr 2}
+]];
