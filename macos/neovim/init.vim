@@ -1,3 +1,8 @@
+" needs:
+" - neovim (brew install neovim)
+" - neovom python (pip install neovim)
+" - dein (https://github.com/Shougo/dein.vim)
+
 if &compatible
   set nocompatible
 endif
@@ -5,59 +10,58 @@ endif
 set encoding=utf-8
 scriptencoding utf-8
 
-" set shell=sh
+set shell=sh
 
-set runtimepath+=$HOME/.dein/repos/github.com/Shougo/dein.vim
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+set runtimepath+=/Users/christian/.cache/dein/repos/github.com/Shougo/dein.vim
+call dein#begin('/Users/christian/.cache/dein')
+call dein#add('/Users/christian/.cache/dein/repos/github.com/Shougo/dein.vim')
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 set guifont=Fira\ Code:h12
 
-if dein#load_state('~/.dein')
-  call dein#begin('~/.dein')
-  call dein#add('~/.dein')
+call dein#begin('~/.dein')
+call dein#add('~/.dein')
 
-  " fuzzy file search
-  call dein#add('ctrlpvim/ctrlp.vim')
-  " auto completion
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('artur-shaik/vim-javacomplete2')
-  " file browser
-  call dein#add('scrooloose/nerdtree')
-  " formatting
-  call dein#add('sbdchd/neoformat')
-  " UI
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('taohex/lightline-buffer')
-  call dein#add('airblade/vim-gitgutter')
-  " intelligent buffer closing
-  call dein#add('qpkorr/vim-bufkill')
-  " commenting code
-  call dein#add('tomtom/tcomment_vim')
-  " also repeat commands
-  call dein#add('tpope/vim-repeat')
-  " silver surfer
-  call dein#add('mileszs/ack.vim')
-  " tmux
-  call dein#add('benmills/vimux')
+" fuzzy file search
+call dein#add('ctrlpvim/ctrlp.vim')
+" auto completion
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('artur-shaik/vim-javacomplete2')
+" file browser
+call dein#add('scrooloose/nerdtree')
+" formatting
+call dein#add('sbdchd/neoformat')
+" UI
+call dein#add('itchyny/lightline.vim')
+call dein#add('taohexxx/lightline-buffer')
+call dein#add('airblade/vim-gitgutter')
+" intelligent buffer closing
+call dein#add('qpkorr/vim-bufkill')
+" commenting code
+call dein#add('tomtom/tcomment_vim')
+" also repeat commands
+call dein#add('tpope/vim-repeat')
+" silver surfer
+call dein#add('mileszs/ack.vim')
+" tmux
+call dein#add('benmills/vimux')
+" tag bar
+call dein#add('majutsushi/tagbar')
 
-  " indentation, parentheses and stuff
-  call dein#add('nathanaelkane/vim-indent-guides')
-  call dein#add('kien/rainbow_parentheses.vim')
-  call dein#add('ntpeters/vim-better-whitespace')
-  call dein#add('tpope/vim-surround')
-  call dein#add('terryma/vim-multiple-cursors')
-  " EMACS SLIME for repl in vim
-  " call dein#add('jpalardy/vim-slime')
+" indentation, parentheses and stuff
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('kien/rainbow_parentheses.vim')
+call dein#add('ntpeters/vim-better-whitespace')
+call dein#add('tpope/vim-surround')
+call dein#add('terryma/vim-multiple-cursors')
+" EMACS SLIME for repl in vim
+" call dein#add('jpalardy/vim-slime')
 
-  " langs
-  call dein#add('derekwyatt/vim-scala')
-  call dein#add('ensime/ensime-vim')
-  " call dein#add('JuliaEditorSupport/julia-vim')
+" langs
+" call dein#add('JuliaEditorSupport/julia-vim')
 
-  call dein#end()
-  call dein#save_state()
-endif
+call dein#end()
 
 if dein#check_install()
   call dein#install()
@@ -100,7 +104,7 @@ set fo-=t
 
 set textwidth=90
 
-" always show tabline
+" always show tabline (lightline-buffer)
 set showtabline=2
 
 " Always show line numbers, but only in current window.
@@ -153,27 +157,29 @@ let g:ctrlp_working_path_mode = ""
 
 " minimal lightline setup
 let g:lightline = {
-    \ 'colorscheme': 'nord',
-     \ 'active': {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
         \   'left': [ [ 'mode' ] ],
         \   'right': [ ]
-        \ },
-	\ 'tabline': {
-		\ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-		\ 'right': [ ],
-		\ },
-	\ 'component_expand': {
-		\ 'buffercurrent': 'lightline#buffer#buffercurrent2',
-		\ },
-	\ 'component_type': {
-		\ 'buffercurrent': 'tabsel',
-		\ },
-	\ 'component_function': {
-		\ 'bufferbefore': 'lightline#buffer#bufferbefore',
-		\ 'bufferafter': 'lightline#buffer#bufferafter',
-		\ 'bufferinfo': 'lightline#buffer#bufferinfo',
-		\ },
-	\ }
+    \ },
+    \ 'tabline': {
+        \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+        \ 'right': [ ],
+    \ },
+    \ 'component_expand': {
+        \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
+    \ },
+    \ 'component_type': {
+        \ 'buffercurrent': 'tabsel',
+    \ },
+    \ 'component_function': {
+        \ 'bufferbefore': 'lightline#buffer#bufferbefore',
+        \ 'bufferafter': 'lightline#buffer#bufferafter',
+        \ 'bufferinfo': 'lightline#buffer#bufferinfo',
+    \ },
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+\ }
 
 " simple mode indicator
 " see: https://github.com/itchyny/lightline.vim/issues/113
@@ -195,7 +201,7 @@ let g:lightline.mode_map = {
 " let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
 " let s:palette.inactive.middle = s:palette.normal.middle
 " let s:palette.tabline.middle = s:palette.normal.middle
-
+"
 let g:lightline_buffer_excludes = ['vimfiler']
 let g:lightline_buffer_show_bufnr = 1
 let g:lightline_buffer_rotate = 0
@@ -204,6 +210,7 @@ let g:lightline_buffer_fname_mod = ':t'
 " the silver searcher
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep --smart-case'
+
 " replace ag with Ack, no need to type Ack any more
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -230,3 +237,5 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 colorscheme nord
 set background=dark
+
+let g:nord_comment_brightness = 20
