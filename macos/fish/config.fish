@@ -1,4 +1,7 @@
-eval sh $HOME/.config/base16-default.dark.sh
+# base16 theme:
+# omf install https://github.com/FabioAntunes/base16-fish-shell
+# run base16-gruvbox-dark-pale
+
 # set nord theme:
 # https://github.com/ryanoasis/nerd-fonts
 # set -g theme_color_scheme nord
