@@ -2,9 +2,8 @@
 You know the drill.
 
 ## macOS
-Tiling via ~~kwm~~ [chunkwm](https://github.com/koekeishiya/chunkwm) and
-[khd](https://github.com/koekeishiya/khd).
+![grafik](https://user-images.githubusercontent.com/6138133/158418434-e9a3948b-a884-46b0-a341-12ad3e69940d.png)
+tmux, alacritty, neovim with a base16-gruvbox based theme
 
-## Arch Linux on a MacBook Pro 2011
-i3wm, polybar, rofi, termite, neovim, ncmcpp + mpd
-![head_0](screenshot.png)
+## Arch Linux
+not in use anymore
