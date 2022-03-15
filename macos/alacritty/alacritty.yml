@@ -2,8 +2,9 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 10
+    x: 15
+    y: 15
+  opacity: 0.8
 scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
@@ -11,6 +12,7 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 background_opacity: 0.80
+# source: https://github.com/aarowill/base16-alacritty/blob/master/colors/base16-default-dark-256.yml
 # Base16 Default Dark 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
 colors:
@@ -18,30 +20,34 @@ colors:
   primary:
     background: '0x181818'
     foreground: '0xd8d8d8'
+
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x181818'
     cursor: '0xd8d8d8'
+
   # Normal colors
   normal:
-    black: '0x181818'
-    red: '0xab4642'
-    green: '0xa1b56c'
-    yellow: '0xf7ca88'
-    blue: '0x7cafc2'
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
     magenta: '0xba8baf'
-    cyan: '0x86c1b9'
-    white: '0xd8d8d8'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
+
   # Bright colors
   bright:
-    black: '0x585858'
-    red: '0xab4642'
-    green: '0xa1b56c'
-    yellow: '0xf7ca88'
-    blue: '0x7cafc2'
+    black:   '0x585858'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
     magenta: '0xba8baf'
-    cyan: '0x86c1b9'
-    white: '0xf8f8f8'
+    cyan:    '0x86c1b9'
+    white:   '0xf8f8f8'
+
   indexed_colors:
     - { index: 16, color: '0xdc9656' }
     - { index: 17, color: '0xa16946' }
@@ -51,22 +57,22 @@ colors:
     - { index: 21, color: '0xe8e8e8' }
 font:
   normal:
-    family: Monaco
+    family: Monaco Nerd Font
     style: Regular
   bold:
-    family: Monaco
+    family: Monaco Nerd Font
     style: Bold
   italic:
-    family: Monaco
+    family: Monaco Nerd Font
     style: Italic
   bold_italic:
-    family: Monaco
+    family: Monaco Nerd Font
     style: Bold Italic
   size: 12.0
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  semantic_escape_chars: ",‚îÇ`|:\"' ()[]{}<>\t"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
 shell:
@@ -76,7 +82,7 @@ shell:
 mouse:
   hints:
     launcher:
-      # This depends on your OS, on Mac it‚Äôs `open`
+      # This depends on your OS, on Mac it’s `open`
       program: open
     modifiers: Command
 draw_bold_text_with_bright_colors: true
@@ -88,3 +94,7 @@ cursor:
 live_config_reload: true
 key_bindings:
   - { key: N, mods: Command|Shift, action: SpawnNewInstance }
+env:
+  # https://github.com/jwilm/alacritty/issues/2566
+  LC_CTYPE: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
